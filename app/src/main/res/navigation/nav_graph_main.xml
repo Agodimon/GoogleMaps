@@ -5,9 +5,9 @@
     android:id="@+id/nav_graph_main"
     app:startDestination="@id/mapsFragment">
 
+
     <fragment
         android:id="@+id/mapsFragment"
-        android:name="com.example.googlemaps.MapsFragment"
-        android:label="Google map"
-        tools:layout="@layout/fragment_maps" />
+        android:name="MapsFragment"
+        android:label="MapsFragment" />
 </navigation>
