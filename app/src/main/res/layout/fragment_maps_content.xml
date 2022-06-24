@@ -14,7 +14,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     />
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_saved_notes_geolocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="@color/white"
+        android:src="@android:drawable/ic_menu_edit"
+        app:layout_constraintBottom_toTopOf="@+id/mainFragmentFABLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:maxImageSize="@dimen/fab_location_icon_size" />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/mainFragmentFABLocation"
         android:layout_width="wrap_content"
@@ -25,4 +34,5 @@
         app:layout_constraintBottom_toBottomOf="@+id/map"
         app:layout_constraintStart_toStartOf="parent"
         app:maxImageSize="@dimen/fab_location_icon_size" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
