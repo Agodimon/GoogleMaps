@@ -1,4 +1,4 @@
-package com.example.googlemaps
+package com.example.googlemaps.ui
 
 data class NotesMarker (
         val id: Int,

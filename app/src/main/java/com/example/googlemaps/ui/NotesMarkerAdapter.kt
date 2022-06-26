@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.googlemaps.NotesMarker
 import com.example.googlemaps.R
 import com.example.googlemaps.databinding.LayoutNotesMarkerListItemBinding
 import by.kirich1409.viewbindingdelegate.viewBinding

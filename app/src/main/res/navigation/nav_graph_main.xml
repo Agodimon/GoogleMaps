@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/mapsFragment"
-        android:name="MapsFragment"
+        android:name="com.example.googlemaps.ui.MapsFragment"
         android:label="MapsFragment" >
         <action
             android:id="@+id/action_mapsFragment_to_notesMarkersFragment"

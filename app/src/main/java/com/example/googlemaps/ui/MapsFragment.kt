@@ -1,3 +1,5 @@
+package com.example.googlemaps.ui
+
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -29,7 +31,6 @@ import com.google.android.gms.maps.model.PolylineOptions
 import kotlinx.coroutines.*
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.googlemaps.R
-import com.example.googlemaps.databinding.ActivityMainBinding
 import java.io.IOException
 
 

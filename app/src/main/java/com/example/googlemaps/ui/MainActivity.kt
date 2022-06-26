@@ -1,15 +1,11 @@
-package com.example.googlemaps
+package com.example.googlemaps.ui
 
-import MapsFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import by.kirich1409.viewbindingdelegate.viewBinding
-import com.example.googlemaps.databinding.FragmentMapsBinding
+import com.example.googlemaps.R
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController

@@ -7,7 +7,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.googlemaps.R
 import com.example.googlemaps.databinding.FragmentNotesMarkerBinding
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.example.googlemaps.NotesMarker
 
 class NotesMarkersFragment : Fragment(R.layout.fragment_notes_marker) {
     private val viewBinding: FragmentNotesMarkerBinding by viewBinding()
