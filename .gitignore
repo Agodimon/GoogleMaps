@@ -17,3 +17,5 @@ local.properties
 /.idea/compiler.xml
 /.idea/gradle.xml
 /.idea/misc.xml
+/.idea/vcs.xml
+/.idea/git_toolbox_prj.xml

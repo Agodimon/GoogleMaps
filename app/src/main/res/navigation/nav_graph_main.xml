@@ -5,9 +5,17 @@
     android:id="@+id/nav_graph_main"
     app:startDestination="@id/mapsFragment">
 
+
     <fragment
         android:id="@+id/mapsFragment"
-        android:name="com.example.googlemaps.MapsFragment"
-        android:label="Google map"
-        tools:layout="@layout/fragment_maps" />
+        android:name="com.example.googlemaps.ui.MapsFragment"
+        android:label="MapsFragment" >
+        <action
+            android:id="@+id/action_mapsFragment_to_notesMarkersFragment"
+            app:destination="@id/notesMarkersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesMarkersFragment"
+        android:name="com.example.googlemaps.ui.NotesMarkersFragment"
+        android:label="NotesMarkersFragment" />
 </navigation>
