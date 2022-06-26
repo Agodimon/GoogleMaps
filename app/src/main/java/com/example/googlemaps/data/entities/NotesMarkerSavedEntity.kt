@@ -4,11 +4,14 @@ import androidx.room.*
 import com.example.googlemaps.data.RoomConstants
 
 
-@Entity(tableName = RoomConstants.NOTES_SAVED_MARKERS_TABLE)
-data class NotesMarkerEntity(
+@Entity(tableName = RoomConstants.FRAGMENT_NOTES_MARKER_TABLE)
+data class NotesMarkerSavedEntity(
     @PrimaryKey
     @ColumnInfo(name = "name marker")
     val nameMarker: String,
+
+    @ColumnInfo(name = "description")
+    val description: String,
 
     @ColumnInfo(name = "latitude")
     val latitude: Double,
