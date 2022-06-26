@@ -4,19 +4,24 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.googlemaps.data.dao.NotesMarkerSavedDao
 import com.example.googlemaps.data.dao.NotesMarkersDao
-import com.example.googlemaps.data.entities.NotesMakerEntity
+
+import com.example.googlemaps.data.entities.NotesMarkerEntity
+import com.example.googlemaps.data.entities.NotesMarkerSavedEntity
 
 
 @Database(
     entities = [
-        NotesMakerEntity::class
+        NotesMarkerSavedEntity::class,
+        NotesMarkerEntity::class,
     ],
     version = 1,
-    exportSchema = true
+    exportSchema = false
 )
-abstract class Database : RoomDatabase(){
+abstract class Database : RoomDatabase() {
     abstract fun getNotesMarkers(): NotesMarkersDao
+    abstract fun getNotesMarkersSaved(): NotesMarkerSavedDao
 
 
     companion object {

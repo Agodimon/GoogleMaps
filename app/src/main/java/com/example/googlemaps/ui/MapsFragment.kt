@@ -31,6 +31,9 @@ import com.google.android.gms.maps.model.PolylineOptions
 import kotlinx.coroutines.*
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.googlemaps.R
+import com.example.googlemaps.data.entities.NotesMarkerEntity
+import com.example.googlemaps.di.modules.RoomModuleInt
+import org.koin.android.ext.android.inject
 import java.io.IOException
 
 
@@ -38,16 +41,18 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
     private val viewBinding: FragmentMapsBinding by viewBinding()
     private val LATITUDE = 44.952117
     private val LONGITUDE = 34.102417
-    private  val MIN_TIME_MS = 5000L
-    private  val MIN_DISTANCE_M = 10f
+    private val MIN_TIME_MS = 5000L
+    private val MIN_DISTANCE_M = 10f
     private lateinit var map: GoogleMap
     private var menu: Menu? = null
-
+    val repo: RoomModuleInt by inject()
     private val markers: ArrayList<Marker> = ArrayList()
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, _ -> }
-    private val scopeIo = CoroutineScope(Dispatchers.IO + coroutineExceptionHandler + SupervisorJob())
-    private val scope = CoroutineScope(Dispatchers.Main + coroutineExceptionHandler + SupervisorJob())
+    private val scopeIo =
+        CoroutineScope(Dispatchers.IO + coroutineExceptionHandler + SupervisorJob())
+    private val scope =
+        CoroutineScope(Dispatchers.Main + coroutineExceptionHandler + SupervisorJob())
     private var job: Job? = null
     private val permissionResult = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
@@ -61,6 +66,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
             ).show()
         }
     }
+
     private fun checkPermission() {
         activity?.let {
             when (PackageManager.PERMISSION_GRANTED) {
@@ -149,7 +155,6 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
                 .show()
         }
     }
-
 
 
     @SuppressLint("MissingPermission")
@@ -259,6 +264,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
             )
         }
     }
+
     private fun navigateToNotesMarkersFragment() {
         findNavController().navigate(R.id.action_mapsFragment_to_notesMarkersFragment)
     }
@@ -270,6 +276,14 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
                 .position(location)
                 .title(searchText)
         )?.let { markers.add(it) }
+        val notesMarker = NotesMarkerEntity(
+
+            nameMarker = searchText,
+            latitude = location.latitude,
+            longitude = location.longitude
+
+        )
+        scopeIo.launch { repo.insertNotesMarker(notesMarker) }
 
     }
 
@@ -287,6 +301,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
             )
         }
     }
+
     override fun onDestroy() {
         scopeIo.cancel()
         super.onDestroy()

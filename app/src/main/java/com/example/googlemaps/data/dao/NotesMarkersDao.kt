@@ -1,22 +1,24 @@
 package com.example.googlemaps.data.dao
 
 import androidx.room.*
-import com.example.googlemaps.data.RoomConstants.NOTES_MARKERS_TABLE
-import com.example.googlemaps.data.entities.NotesMakerEntity
+import com.example.googlemaps.data.RoomConstants.NOTES_SAVED_MARKERS_TABLE
+
+
+import com.example.googlemaps.data.entities.NotesMarkerEntity
 
 
 @Dao
 interface NotesMarkersDao {
-    @Query("SELECT * FROM $NOTES_MARKERS_TABLE")
-    fun getNotesMarker(): NotesMakerEntity
+    @Query("SELECT * FROM $NOTES_SAVED_MARKERS_TABLE")
+    fun getNotesMarker(): NotesMarkerEntity
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertNotesMarker(notesMaker: NotesMakerEntity)
+    fun insertNotesMarker(notesMaker: NotesMarkerEntity)
 
     @Delete
-    suspend fun deleteNotesMarker(notesMaker: List<NotesMakerEntity>)
+    fun deleteNotesMarker(notesMaker: List<NotesMarkerEntity>)
 
-    @Query("DELETE FROM $NOTES_MARKERS_TABLE")
-    suspend fun deleteAllNotesMarker()
+    @Query("DELETE FROM $NOTES_SAVED_MARKERS_TABLE")
+    fun deleteAllNotesMarker()
 
 }

@@ -6,6 +6,6 @@ import org.koin.dsl.module
 
 object Di {
     val mainModule =module {
-        single<RoomModuleInt> { RoomModule() }
+        factory<RoomModuleInt> { RoomModule() }
     }
 }
