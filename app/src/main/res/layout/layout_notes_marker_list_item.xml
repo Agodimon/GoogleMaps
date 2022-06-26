@@ -5,7 +5,7 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
+    android:layout_margin="20dp"
     app:cardCornerRadius="15dp"
     app:cardElevation="8dp">
 
@@ -13,45 +13,105 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_500"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="City:"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/name_marker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#DDCEF1"
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
             android:textAlignment="center"
-            android:textColor="@color/teal_200"
-             />
+            android:textColor="#1E2E5E" />
+
         <TextView
-            android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/purple_200"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Describe(write annotation for city):"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/describe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#DDCEF1"
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
             android:textAlignment="center"
-            android:textColor="@color/teal_200"
-            />
+            android:textColor="#1E2E5E" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Longitude:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
         <TextView
             android:id="@+id/longitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#DDCEF1"
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
             android:textAlignment="center"
-            android:textColor="@color/teal_200"
-            />
+            android:textColor="#1E2E5E" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Latitude:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
         <TextView
             android:id="@+id/latitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#DDCEF1"
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
             android:textAlignment="center"
-            android:textColor="@color/teal_200"
-            />
+            android:textColor="#1E2E5E" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save_describe"
+            android:layout_width="wrap_content"
 
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="#671CEC"
+
+            android:text="Save describe"
+            android:textColor="#FFEB3B">
+
+        </androidx.appcompat.widget.AppCompatButton>
 
     </LinearLayout>
 

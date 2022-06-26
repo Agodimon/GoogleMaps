@@ -140,15 +140,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
                 .setTitle(getString(R.string.dialog_address_title))
                 .setMessage(address)
                 .setPositiveButton(getString(R.string.dialog_take_a_note)) { _, _ ->
-//                    openDetailsFragment(
-//                        Weather(
-//                            City(
-//                                address,
-//                                location.latitude,
-//                                location.longitude
-//                            )
-//                        )
-//                    )
+                    navigateToNotesMarkersFragment()
                 }
                 .setNegativeButton(getString(R.string.dialog_button_close)) { dialog, _ -> dialog.dismiss() }
                 .create()

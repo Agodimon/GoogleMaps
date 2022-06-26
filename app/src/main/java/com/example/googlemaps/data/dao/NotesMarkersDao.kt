@@ -10,7 +10,7 @@ import com.example.googlemaps.data.entities.NotesMarkerEntity
 @Dao
 interface NotesMarkersDao {
     @Query("SELECT * FROM $NOTES_SAVED_MARKERS_TABLE")
-    fun getNotesMarker(): NotesMarkerEntity
+    fun getNotesMarker(): List<NotesMarkerEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertNotesMarker(notesMaker: NotesMarkerEntity)
