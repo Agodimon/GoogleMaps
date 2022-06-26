@@ -3,12 +3,15 @@ package com.example.googlemaps.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.googlemaps.R
 import com.example.googlemaps.databinding.LayoutNotesMarkerListItemBinding
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.googlemaps.data.entities.NotesMarkerEntity
+import com.example.googlemaps.data.entities.NotesMarkerSavedEntity
 import com.example.googlemaps.di.modules.RoomModuleInt
 import kotlinx.coroutines.*
 import org.koin.java.KoinJavaComponent.inject
