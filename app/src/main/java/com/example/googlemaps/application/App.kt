@@ -1,4 +1,4 @@
-package com.example.googlemaps.aplication
+package com.example.googlemaps.application
 
 import android.app.Application
 import com.example.googlemaps.data.Database
