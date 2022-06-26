@@ -9,7 +9,7 @@ class RoomModule :RoomModuleInt{
     override fun insertNotesMarker(notesMaker: NotesMarkerEntity){
         App.instance.databaseService.getNotesMarkers().insertNotesMarker(notesMaker)
     }
-    override fun getNotesMarker(): NotesMarkerEntity {
+    override fun getNotesMarker(): List<NotesMarkerEntity> {
         return App.instance.databaseService.getNotesMarkers().getNotesMarker()
     }
 }
