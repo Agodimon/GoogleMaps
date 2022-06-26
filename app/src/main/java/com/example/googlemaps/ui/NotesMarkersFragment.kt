@@ -21,13 +21,13 @@ class NotesMarkersFragment : Fragment(R.layout.fragment_notes_marker) {
     private fun initRecyclerView() = with(viewBinding) {
         adapter = CategoryAdapter(object : OnCategoryClickListener {
             override fun onClick(notesMarker: NotesMarker) {
-                navigateToRecipeList()
+                navigateToUp()
             }
         })
         categoryListRecyclerView.adapter = adapter
     }
 
-    private fun navigateToRecipeList() {
+    private fun navigateToUp() {
         findNavController().navigateUp()
     }
 }

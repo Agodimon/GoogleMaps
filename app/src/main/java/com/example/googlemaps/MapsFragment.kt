@@ -15,6 +15,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 
 import com.example.googlemaps.databinding.FragmentMapsBinding
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -188,6 +189,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
         mapFragment?.getMapAsync(callback)
         initSearchByAddress()
         viewBinding.includedMapsFragment.mainFragmentFABLocation.setOnClickListener { checkPermission() }
+        viewBinding.includedMapsFragment.fabSavedNotesGeolocation.setOnClickListener { navigateToNotesMarkersFragment() }
     }
 
     override fun onDestroyView() {
@@ -255,6 +257,9 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
                 )
             )
         }
+    }
+    private fun navigateToNotesMarkersFragment() {
+        findNavController().navigate(R.id.action_mapsFragment_to_notesMarkersFragment)
     }
 
 

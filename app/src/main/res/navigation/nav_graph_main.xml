@@ -9,5 +9,13 @@
     <fragment
         android:id="@+id/mapsFragment"
         android:name="MapsFragment"
-        android:label="MapsFragment" />
+        android:label="MapsFragment" >
+        <action
+            android:id="@+id/action_mapsFragment_to_notesMarkersFragment"
+            app:destination="@id/notesMarkersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesMarkersFragment"
+        android:name="com.example.googlemaps.ui.NotesMarkersFragment"
+        android:label="NotesMarkersFragment" />
 </navigation>
