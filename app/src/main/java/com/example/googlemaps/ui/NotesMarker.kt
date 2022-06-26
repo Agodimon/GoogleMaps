@@ -1,10 +1,11 @@
 package com.example.googlemaps.ui
 
+import java.io.Serializable
+
 data class NotesMarker (
         val id: Int,
         val nameMarker: String,
-        val address: String,
         val latitude: String,
-        val longitude: String,
+        val longitude: String
 
-)
+):Serializable

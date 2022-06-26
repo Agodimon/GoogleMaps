@@ -42,7 +42,6 @@ class CategoryAdapter(private val onCategoryClickListener: OnCategoryClickListen
         fun bind(onCategoryClickListener: OnCategoryClickListener, item: NotesMarker) =
             with(viewBinding) {
                 nameMarker.text = item.nameMarker
-                address.text = item.address
                 longitude.text = item.longitude
                 latitude.text = item.latitude
 

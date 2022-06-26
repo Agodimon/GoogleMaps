@@ -270,6 +270,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
                 .position(location)
                 .title(searchText)
         )?.let { markers.add(it) }
+
     }
 
 
